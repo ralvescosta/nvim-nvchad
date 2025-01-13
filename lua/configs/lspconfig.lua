@@ -17,11 +17,14 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.gopls.setup({
-    on_attach = function(client, bufnr)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-        on_attach(client, bufnr)
-    end,
+    -- CUSTOM ON ATTACH CONFIG
+  --
+    -- on_attach = function(client, bufnr)
+    --     client.server_capabilities.documentFormattingProvider = false
+    --     client.server_capabilities.documentRangeFormattingProvider = false
+    --     on_attach(client, bufnr)
+    -- end,
+    on_attach = nvlsp.on_attach,  
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
     cmd = { "gopls" },
@@ -39,9 +42,3 @@ lspconfig.gopls.setup({
     },
 })
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
