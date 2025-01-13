@@ -3,6 +3,9 @@ require("mason-lspconfig").setup({
     "rust-analyzer",
     "codelldb",
     "gopls",
-    "delve"
+    "delve",
+    "gofumpt",
+    "goimports-reviser",
+    "golines",
   }
 })
