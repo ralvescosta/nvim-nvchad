@@ -16,12 +16,11 @@ return {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
-        "vim", "lua", "vimdoc",
-        "rust", "go", "c", "markdown",
-        "terraform", "bash", "toml", "gomod",
-        "gosum", "gowork", "proto", "sql",
-        "graphql", "cmake", "json", "terraform",
-        "dockerfile", "yaml"
+        "vim", "lua", "vimdoc", "rust", 
+        "go", "gomod", "gosum", "gowork", 
+        "c", "markdown", "terraform", "bash", 
+        "toml",  "proto", "sql", "graphql", "cmake", 
+        "json", "terraform", "dockerfile", "yaml"
   		},
   	},
   },
