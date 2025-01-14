@@ -17,7 +17,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 ```bash
 sudo apt install xclip
-sudo apt-get install ripgrep
+sudo apt install ripgrep
+sudo apt install lazygit
 go install github.com/jesseduffield/lazygit@latest
 asdf reshim golang
 ```
