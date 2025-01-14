@@ -17,28 +17,27 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.gopls.setup({
-    -- CUSTOM ON ATTACH CONFIG
+  -- CUSTOM ON ATTACH CONFIG
   --
-    -- on_attach = function(client, bufnr)
-    --     client.server_capabilities.documentFormattingProvider = false
-    --     client.server_capabilities.documentRangeFormattingProvider = false
-    --     on_attach(client, bufnr)
-    -- end,
-    on_attach = nvlsp.on_attach,  
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-    cmd = { "gopls" },
-    filetypes = { "go", "gomod", "gotmpl", "gowork" },
-    root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            completeUnimported = true,
-            usePlaceholders = true,
-            staticcheck = true,
-        },
+  -- on_attach = function(client, bufnr)
+  --     client.server_capabilities.documentFormattingProvider = false
+  --     client.server_capabilities.documentRangeFormattingProvider = false
+  --     on_attach(client, bufnr)
+  -- end,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gotmpl", "gowork" },
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      completeUnimported = true,
+      usePlaceholders = true,
+      staticcheck = true,
     },
+  },
 })
-
