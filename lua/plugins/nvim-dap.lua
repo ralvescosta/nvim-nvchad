@@ -39,26 +39,28 @@ return {
     dependencies = {
       "mfussenegger/nvim-dap",
     },
-    config = function(_, opts)
-      opts.dap_configurations = opts.dap_configurations or {}
-
-      table.insert(opts.dap_configurations, {
-        type = "go",
-        name = "main.go with Arguments",
-        request = "launch",
-        program = "${workspaceFolder}/main.go",
-        args = require("dap-go").get_arguments,
-        env = {
-          GOPRIVATE = "bitbucket.org/asappay",
-          ENVIRONMENT = "dev",
-          SERVICE_NAME = "go-service",
-          OTEL_EXPORTER_OTLP_ENDPOINT = "localhost:4317",
-          AWSPROFILE = "asappay-dev",
-          SOME_VAR = "value"
-        }
+    config = function(_, _)
+      require('dap-go').setup({
+        dap_configurations = {
+          {
+            type = "go",
+            name = "Custom with dynamic args",
+            request = "launch",
+            program = "${workspaceFolder}/main.go",
+            outputMode = "remote",
+            args = require("dap-go").get_arguments,
+            env = {
+              GOPRIVATE = "bitbucket.org/asappay",
+              ENVIRONMENT = "dev",
+              SERVICE_NAME = "go-service",
+              OTEL_EXPORTER_OTLP_ENDPOINT = "localhost:4317",
+              AWSPROFILE = "asappay-dev",
+              SOME_VAR = "value"
+            }
+          },
+        },
       })
-      
-      require("dap-go").setup(opts)
+
     end
   },
 }
