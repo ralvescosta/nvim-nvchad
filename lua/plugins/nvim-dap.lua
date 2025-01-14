@@ -1,7 +1,7 @@
 return {
- {
+  {
     "mfussenegger/nvim-dap",
-    config = function ()
+    config = function()
       local dap, dapui = require("dap"), require("dapui")
 
       dap.listeners.before.attach.dapui_config = function()
@@ -21,6 +21,7 @@ return {
       -- end
     end
   },
+
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
@@ -28,13 +29,28 @@ return {
       "nvim-neotest/nvim-nio",
     },
     config = function()
-			require("dapui").setup()
-		end,
+      require("dapui").setup()
+    end,
   },
+
   {
     "leoluz/nvim-dap-go",
     dependencies = {
       "mfussenegger/nvim-dap",
     },
+    config = function()
+      require("nvim-dap-go").setup({
+        {
+          type = "go",
+          name = "main.go with Arguments",
+          request = "launch",
+          program = "${workspaceFolder}/main.go",
+          args = require("dap-go").get_arguments,
+          env = {
+            SOME_VAR = "value",
+          },
+        },
+      })
+    end
   },
 }
