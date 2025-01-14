@@ -7,15 +7,16 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- ###### GOTO #######
-map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>",
-  { noremap = true, silent = true, desc = "Go To Implementation" })
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>",
-  { noremap = true, silent = true, desc = "Go to Reference" })
-map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>",
-  { noremap = true, silent = true, desc = "Go to Declaration" })
-map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-  { noremap = true, silent = true, desc = "Signature Help" })
+-- ###### LSP #######
+-- map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>",
+--   { noremap = true, silent = true, desc = "Go To Implementation" })
+-- map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>",
+--   { noremap = true, silent = true, desc = "Go to Reference" })
+-- map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>",
+--   { noremap = true, silent = true, desc = "Go to Declaration" })
+-- map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+--   { noremap = true, silent = true, desc = "Signature Help" })
+--
 -- ############
 
 

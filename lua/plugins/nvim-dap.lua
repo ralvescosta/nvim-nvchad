@@ -49,6 +49,10 @@ return {
         program = "${workspaceFolder}/main.go",
         args = require("dap-go").get_arguments,
         env = {
+          GOPRIVATE = "bitbucket.org/asappay",
+          ENVIRONMENT = "dev",
+          OTEL_EXPORTER_OTLP_ENDPOINT = "localhost:4317",
+          AWSPROFILE = "asappay-dev",
           SOME_VAR = "value",
         },
       })
