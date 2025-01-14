@@ -51,10 +51,11 @@ return {
         env = {
           GOPRIVATE = "bitbucket.org/asappay",
           ENVIRONMENT = "dev",
+          SERVICE_NAME = "go-service",
           OTEL_EXPORTER_OTLP_ENDPOINT = "localhost:4317",
           AWSPROFILE = "asappay-dev",
-          SOME_VAR = "value",
-        },
+          SOME_VAR = "value"
+        }
       })
       
       require("dap-go").setup(opts)
