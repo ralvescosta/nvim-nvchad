@@ -13,17 +13,41 @@ map("n", "<Leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugg
 map("n", "<Leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })
 map("n", "<Leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
 map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
-map(
-	"n",
-	"<Leader>dd",
-	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-	{ desc = "Debugger set conditional breakpoint" }
-)
-map("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
-map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
 
--- rustaceanvim
-map("n", "<Leader>dt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "Debugger testables" })
+-- Toggle dup ui
+map("n", "<leader>dU", function()
+  require("dapui").toggle()
+end)
+
+-- Toggle the summary panel
+map("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end)
+
+-- Run the nearest test to the cursor
+map("n", "<leader>tr", function()
+  require("neotest").run.run()
+end)
+
+-- Run the entire file
+map("n", "<leader>tf", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+end)
+
+-- Debug the nearest test (requires nvim-dap + adapter support)
+map("n", "<leader>td", function()
+  require("neotest").run.run({ strategy = "dap" })
+end)
+
+-- Jump to the next failed test
+map("n", "]t", function()
+  require("neotest").jump.next({ status = "failed" })
+end)
+
+-- Jump to the previous failed test
+map("n", "[t", function()
+  require("neotest").jump.prev({ status = "failed" })
+end)
 
 
 -- HOP
