@@ -13,6 +13,15 @@ Now you need to add this path in your shell profile
 export PATH="$PATH:/opt/nvim-linux64/bin"
 ```
 
+## Install tools
+
+```bash
+sudo apt install xclip
+sudo apt-get install ripgrep
+go install github.com/jesseduffield/lazygit@latest
+asdf reshim golang
+```
+
 ## Clone this repository
 
 ```bash

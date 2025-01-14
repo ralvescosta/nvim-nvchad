@@ -28,29 +28,32 @@ return {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
-    config = function()
-      require("dapui").setup()
+    config = function(_, opts)
+      require("dapui").setup(opts)
     end,
   },
 
   {
     "leoluz/nvim-dap-go",
+    ft = "go",
     dependencies = {
       "mfussenegger/nvim-dap",
     },
-    config = function()
-      require("nvim-dap-go").setup({
-        {
-          type = "go",
-          name = "main.go with Arguments",
-          request = "launch",
-          program = "${workspaceFolder}/main.go",
-          args = require("dap-go").get_arguments,
-          env = {
-            SOME_VAR = "value",
-          },
+    config = function(_, opts)
+      opts.dap_configurations = opts.dap_configurations or {}
+
+      table.insert(opts.dap_configurations, {
+        type = "go",
+        name = "main.go with Arguments",
+        request = "launch",
+        program = "${workspaceFolder}/main.go",
+        args = require("dap-go").get_arguments,
+        env = {
+          SOME_VAR = "value",
         },
       })
+      
+      require("dap-go").setup(opts)
     end
   },
 }
