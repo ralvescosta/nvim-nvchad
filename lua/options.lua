@@ -19,3 +19,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 -- #####################
+
+-- ##### FOLD #####
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- Optional: Start with all folds open or closed
+vim.opt.foldenable = false
+-- #####################
+
