@@ -21,7 +21,7 @@ return {
             enabled = false
           },
           override = {
-            ["vim.lsp.util.show_code_action_menu"] = false
+            ["vim.lsp.util.show_code_action_menu"] = false,
           },
           progress = {
             enabled = true,
@@ -29,6 +29,13 @@ return {
             format_done = "lsp_progress_done",
             view = "notify",
           },
+          signature = {
+            enabled = false,
+            opts = {},
+          },
+        },
+        presets = {
+          lsp_doc_border = true,
         },
       })
     end
