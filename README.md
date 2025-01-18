@@ -23,6 +23,19 @@ go install github.com/jesseduffield/lazygit@latest
 asdf reshim golang
 ```
 
+## Download and configuration of NerdFonts
+
+Go to the NedFont download page `https://www.nerdfonts.com/font-downloads`, select you desired font, download the zip folder.
+
+Extract the zipper folder in this directory
+
+```
+~/.local/share/fonts/
+```
+
+And configure in your terminal the font you will use
+
+
 ## Clone this repository
 
 ```bash
