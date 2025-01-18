@@ -27,3 +27,21 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 -- #####################
 
+-- ##### BRAKING POINT ######
+vim.api.nvim_set_hl(0, "GreenLadybug", { fg = "#00ff00" })
+vim.api.nvim_set_hl(0, "RedLadybug",   { fg = "#ff0000" })
+
+vim.fn.sign_define("DapBreakpoint", {
+  text = "",            -- The "ladybug" glyph (nf-md-ladybug) 
+  texthl = "GreenLadybug",
+  linehl = "",
+  numhl = "",
+})
+
+vim.fn.sign_define("DapStopped", {
+  text = "",
+  texthl = "RedLadybug",
+  linehl = "",
+  numhl = "",
+})
+-- ##########################
