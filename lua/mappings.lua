@@ -56,9 +56,17 @@ end, { remap = true })
 
 -- ######## LINES MOVE ###########
 -- NORMAL mode: Move the current line down/up
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 -- VISUAL mode: Move the selected block down/up
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- ###########################
+
+-- ######### WINDOW RE SIZE ###########
+map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
+-- ###################################
+
