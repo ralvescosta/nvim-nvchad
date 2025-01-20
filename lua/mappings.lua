@@ -12,7 +12,7 @@ map("n", "<Leader>gi", "<cmd>Telescope lsp_implementations<CR>",
   { noremap = true, silent = true, desc = "Go To Implementation" })
 map("n", "<Leader>gr", "<cmd>Telescope lsp_references<CR>",
   { noremap = true, silent = true, desc = "Go to Reference" })
-map("n", "<Leader>gd", "<cmd>lua vim.lsp.buf.declaration()<CR>",
+map("n", "<Leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>",
   { noremap = true, silent = true, desc = "Go to Declaration" })
 map("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
   { noremap = true, silent = true, desc = "Signature Help" })
