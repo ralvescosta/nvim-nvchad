@@ -22,3 +22,5 @@ ExchangeDefinition
 acks
 QueueBinding
 Mastercard
+#ILO/!
+HILO/!
