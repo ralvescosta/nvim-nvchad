@@ -1,5 +1,6 @@
 return {
   {
+    -- Floating Notifications  
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
