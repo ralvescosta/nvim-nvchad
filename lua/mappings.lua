@@ -26,14 +26,19 @@ map("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
 map("n", "<Leader>cs", "<cmd>Telescope spell_suggest<CR>",
   { noremap = true, silent = true, desc = "Code Spell suggest" })
 
-map("n", "<Leader>cd",
-  function()
-    require('telescope.builtin').diagnostics({ bufnr = 0 })
-  end,
+map("n", "<Leader>cd", vim.diagnostic.open_float,
   { noremap = true, silent = true, desc = "Code diagnostic" }
 )
 --- ############
 
+-- ####### Telescope #######
+map("n", "<Leader>tcd",
+  function()
+    require('telescope.builtin').diagnostics({ bufnr = 0 })
+  end,
+  { noremap = true, silent = true, desc = "Telescope code diagnostic" }
+)
+-- #####################
 
 -- ####### DAP #######
 map("n", "<Leader>ds", "<cmd>lua require'dap'.continue()<CR>", { desc = "Start Debugger" })
