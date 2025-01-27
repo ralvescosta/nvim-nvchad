@@ -25,6 +25,13 @@ map("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
 
 map("n", "<Leader>cs", "<cmd>Telescope spell_suggest<CR>",
   { noremap = true, silent = true, desc = "Code Spell suggest" })
+
+map("n", "<Leader>cd",
+  function()
+    require('telescope.builtin').diagnostics({ bufnr = 0 })
+  end,
+  { noremap = true, silent = true, desc = "Code diagnostic" }
+)
 --- ############
 
 
@@ -78,4 +85,3 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
 -- ###################################
-

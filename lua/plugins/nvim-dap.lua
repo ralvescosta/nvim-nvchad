@@ -52,7 +52,7 @@ return {
             env = {
               GOPRIVATE = "bitbucket.org/asappay",
               ENVIRONMENT = "dev",
-              SERVICE_NAME = "go-service",
+              SERVICE_NAME = "go-acquirer-local-service",
               OTEL_EXPORTER_OTLP_ENDPOINT = "localhost:4317",
               AWSPROFILE = "asappay-dev",
               SOME_VAR = "value"
