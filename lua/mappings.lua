@@ -10,14 +10,21 @@ map("i", "jk", "<ESC>")
 -- ###### LSP #######
 map("n", "<Leader>gi", "<cmd>Telescope lsp_implementations<CR>",
   { noremap = true, silent = true, desc = "Go To Implementation" })
+
 map("n", "<Leader>gr", "<cmd>Telescope lsp_references<CR>",
   { noremap = true, silent = true, desc = "Go to Reference" })
+
 map("n", "<Leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>",
   { noremap = true, silent = true, desc = "Go to Definition" })
+
 map("n", "<Leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>",
   { noremap = true, silent = true, desc = "Go to Declaration" })
+
 map("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
   { noremap = true, silent = true, desc = "Signature Help" })
+
+map("n", "<Leader>cs", "<cmd>Telescope spell_suggest<CR>",
+  { noremap = true, silent = true, desc = "Code Spell suggest" })
 --- ############
 
 
