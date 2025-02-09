@@ -1,8 +1,5 @@
 return {
   {
-    "davidmh/cspell.nvim",
-  },
-  {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     depends = { "davidmh/cspell.nvim" },
@@ -23,7 +20,6 @@ return {
         opts.sources,
         cspell.code_actions.with {
           -- Adding a name to help with debugging
-          -- hilo
           name = "cspell_code_actions",
         }
       )
