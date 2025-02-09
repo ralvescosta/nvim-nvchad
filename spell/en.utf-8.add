@@ -22,6 +22,15 @@ ExchangeDefinition
 acks
 QueueBinding
 Mastercard
-#ILO/!
-HILO/!
 println/!
+mqtt
+jsonwebtoken
+moka
+neotest
+noice
+rustaceanvim
+sanegx
+chadrc
+stylua
+lspconfig
+ftplugin
