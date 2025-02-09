@@ -8,36 +8,50 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- ###### LSP #######
-map("n", "<Leader>gi", "<cmd>Telescope lsp_implementations<CR>",
-  { noremap = true, silent = true, desc = "Go To Implementation" })
-
-map("n", "<Leader>gr", "<cmd>Telescope lsp_references<CR>",
-  { noremap = true, silent = true, desc = "Go to Reference" })
-
-map("n", "<Leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>",
-  { noremap = true, silent = true, desc = "Go to Definition" })
-
-map("n", "<Leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>",
-  { noremap = true, silent = true, desc = "Go to Declaration" })
-
-map("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-  { noremap = true, silent = true, desc = "Signature Help" })
-
-map("n", "<Leader>cs", "<cmd>Telescope spell_suggest<CR>",
-  { noremap = true, silent = true, desc = "Code Spell suggest" })
-
-map("n", "<Leader>cd", vim.diagnostic.open_float,
-  { noremap = true, silent = true, desc = "Code diagnostic" }
+map(
+  "n",
+  "<Leader>gi",
+  "<cmd>Telescope lsp_implementations<CR>",
+  { noremap = true, silent = true, desc = "Go To Implementation" }
 )
+
+map("n", "<Leader>gr", "<cmd>Telescope lsp_references<CR>", { noremap = true, silent = true, desc = "Go to Reference" })
+
+map(
+  "n",
+  "<Leader>gd",
+  "<cmd>lua vim.lsp.buf.definition()<CR>",
+  { noremap = true, silent = true, desc = "Go to Definition" }
+)
+
+map(
+  "n",
+  "<Leader>gD",
+  "<cmd>lua vim.lsp.buf.declaration()<CR>",
+  { noremap = true, silent = true, desc = "Go to Declaration" }
+)
+
+map(
+  "n",
+  "<Leader>gs",
+  "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+  { noremap = true, silent = true, desc = "Signature Help" }
+)
+
+map(
+  "n",
+  "<Leader>cs",
+  "<cmd>Telescope spell_suggest<CR>",
+  { noremap = true, silent = true, desc = "Code Spell suggest" }
+)
+
+map("n", "<Leader>cd", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Code diagnostic" })
 --- ############
 
 -- ####### Telescope #######
-map("n", "<Leader>tcd",
-  function()
-    require('telescope.builtin').diagnostics({ bufnr = 0 })
-  end,
-  { noremap = true, silent = true, desc = "Telescope code diagnostic" }
-)
+map("n", "<Leader>tcd", function()
+  require("telescope.builtin").diagnostics { bufnr = 0 }
+end, { noremap = true, silent = true, desc = "Telescope code diagnostic" })
 -- #####################
 
 -- ####### DAP #######
@@ -51,27 +65,35 @@ map("n", "<leader>dU", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggl
 map("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle()<CR>", { desc = "Toggle Neotest Summary" })
 map("n", "<leader>tr", "<cmd>lua require('neotest').run.run()<CR>", { desc = "Run the nearest test to the cursor" })
 map("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "Run the entiere file" })
-map("n", "<leader>td", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>",
-  { desc = "Debug the nearest test" })
-map("n", "]t", "<cmd>lua require('neotest').jump.next({ status = 'failed' })<CR>",
-  { desc = "Jump to the next failed test" })
+map(
+  "n",
+  "<leader>td",
+  "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<CR>",
+  { desc = "Debug the nearest test" }
+)
+map(
+  "n",
+  "]t",
+  "<cmd>lua require('neotest').jump.next({ status = 'failed' })<CR>",
+  { desc = "Jump to the next failed test" }
+)
 map("n", "[t", "require('neotest').jump.prev({ status = 'failed' })<CR>", { desc = "Jump to the previous failed test" })
 -- ############
 
 -- ####### HOP #######
-local hop = require("hop")
+local hop = require "hop"
 local directions = require("hop.hint").HintDirection
 map("", "f", function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true }
 end, { remap = true })
 map("", "F", function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+  hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true }
 end, { remap = true })
 map("", "t", function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }
 end, { remap = true })
 map("", "T", function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+  hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }
 end, { remap = true })
 -- ############
 
@@ -90,3 +112,36 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
 -- ###################################
+
+-- ############# LAZY GIT
+map("n", "<leader>gg", function()
+  -- Open Lazygit in a floating terminal
+  local lazygit_cmd = "lazygit"
+  local width = math.floor(vim.o.columns * 0.8)
+  local height = math.floor(vim.o.lines * 0.8)
+  local row = math.floor((vim.o.lines - height) / 2)
+  local col = math.floor((vim.o.columns - width) / 2)
+
+  -- Create a new buffer and floating window
+  local buf = vim.api.nvim_create_buf(false, true)
+  local win = vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = width,
+    height = height,
+    row = row,
+    col = col,
+    style = "minimal",
+    border = "rounded",
+  })
+
+  -- Start Lazygit in the terminal buffer
+  vim.fn.termopen(lazygit_cmd)
+
+  -- Enter insert mode automatically to allow interaction
+  vim.api.nvim_command "startinsert"
+
+  -- Keybinding to close Lazygit (press 'q' to close the floating window)
+  vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>bd!<CR>", { noremap = true, silent = true })
+end, { remap = true, desc = "Open Lazygit" })
+
+--
