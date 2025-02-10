@@ -114,6 +114,8 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window w
 -- ###################################
 
 -- ############# LAZY GIT
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {desc = "Show previews git hunk"})
+map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", {desc = "Toggle line blame"})
 map("n", "<leader>gg", function()
   -- Open Lazygit in a floating terminal
   local lazygit_cmd = "lazygit"
