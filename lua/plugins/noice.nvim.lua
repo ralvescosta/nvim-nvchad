@@ -14,7 +14,7 @@ return {
         },
         views = {
           notify = {
-            replace = true, -- HERE
+            replace = true,
           },
         },
         lsp = {

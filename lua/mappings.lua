@@ -64,7 +64,7 @@ map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc =
 map("n", "<leader>dU", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggle Dap UI" })
 map("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle()<CR>", { desc = "Toggle Neotest Summary" })
 map("n", "<leader>tr", "<cmd>lua require('neotest').run.run()<CR>", { desc = "Run the nearest test to the cursor" })
-map("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "Run the entiere file" })
+map("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "Run the entire file" })
 map(
   "n",
   "<leader>td",
@@ -113,20 +113,18 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
 -- ###################################
 
--- ############# LAZY GIT
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {desc = "Show previews git hunk"})
-map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", {desc = "Toggle line blame"})
+-- ############# GIT
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Show previews git hunk" })
+map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" })
 map("n", "<leader>gg", function()
-  -- Open Lazygit in a floating terminal
   local lazygit_cmd = "lazygit"
   local width = math.floor(vim.o.columns * 0.8)
   local height = math.floor(vim.o.lines * 0.8)
   local row = math.floor((vim.o.lines - height) / 2)
   local col = math.floor((vim.o.columns - width) / 2)
 
-  -- Create a new buffer and floating window
   local buf = vim.api.nvim_create_buf(false, true)
-  local win = vim.api.nvim_open_win(buf, true, {
+  local _ = vim.api.nvim_open_win(buf, true, {
     relative = "editor",
     width = width,
     height = height,
@@ -136,14 +134,12 @@ map("n", "<leader>gg", function()
     border = "rounded",
   })
 
-  -- Start Lazygit in the terminal buffer
   vim.fn.termopen(lazygit_cmd)
-
-  -- Enter insert mode automatically to allow interaction
   vim.api.nvim_command "startinsert"
-
-  -- Keybinding to close Lazygit (press 'q' to close the floating window)
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>bd!<CR>", { noremap = true, silent = true })
 end, { remap = true, desc = "Open Lazygit" })
+-- ###################################
 
+-- ############# Noice
+map("n", "<leader>N", ":Noice dismiss<CR>", { desc = "Dismiss all visible notifications" })
 --
