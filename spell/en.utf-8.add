@@ -83,3 +83,5 @@ gofumpt
 codespell
 Gitsigns
 keymap
+grpcs
+nvimtree
