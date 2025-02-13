@@ -25,4 +25,35 @@ return {
   --     )
   --   end,
   -- },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "davidmh/cspell.nvim",
+  --   },
+  --   opts = function()
+  --     local null_ls = require "null-ls"
+  --     local cspell = require "cspell"
+  --
+  --     -- Define sources but do not automatically attach
+  --     local sources = {
+  --       cspell.diagnostics.with {
+  --         diagnostics_postprocess = function(diagnostic)
+  --           diagnostic.severity = vim.diagnostic.severity.HINT
+  --         end,
+  --       },
+  --       cspell.code_actions,
+  --     }
+  --
+  --     null_ls.setup {
+  --       sources = sources,
+  --       on_attach = function(client, bufnr)
+  --         client.server_capabilities.documentFormattingProvider = false
+  --         client.server_capabilities.documentRangeFormattingProvider = false
+  --         client.server_capabilities.diagnosticProvider = false
+  --       end,
+  --     }
+  --   end,
+  -- },
 }

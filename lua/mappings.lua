@@ -142,4 +142,11 @@ end, { remap = true, desc = "Open Lazygit" })
 
 -- ############# Noice
 map("n", "<leader>N", ":Noice dismiss<CR>", { desc = "Dismiss all visible notifications" })
+
+-- Manually trigger formatting with none-ls
+map("n", "<leader>ss", ":lua vim.diagnostic.setloclist()<CR>", {})
+
+-- Manually trigger diagnostics (none-ls + cspell)
+map("n", "<leader>sd", ":lua require('null-ls').setup({ sources = sources })<CR>", {})
+
 --
