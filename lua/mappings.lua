@@ -61,7 +61,7 @@ map("n", "<Leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugg
 map("n", "<Leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })
 map("n", "<Leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
 map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
-map("n", "<leader>dU", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggle Dap UI" })
+map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggle Dap UI" })
 map("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle()<CR>", { desc = "Toggle Neotest Summary" })
 map("n", "<leader>tr", "<cmd>lua require('neotest').run.run()<CR>", { desc = "Run the nearest test to the cursor" })
 map("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "Run the entire file" })
@@ -142,11 +142,4 @@ end, { remap = true, desc = "Open Lazygit" })
 
 -- ############# Noice
 map("n", "<leader>N", ":Noice dismiss<CR>", { desc = "Dismiss all visible notifications" })
-
--- Manually trigger formatting with none-ls
-map("n", "<leader>ss", ":lua vim.diagnostic.setloclist()<CR>", {})
-
--- Manually trigger diagnostics (none-ls + cspell)
-map("n", "<leader>sd", ":lua require('null-ls').setup({ sources = sources })<CR>", {})
-
 --
