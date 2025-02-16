@@ -4,12 +4,6 @@ return {
     opts = {
       disable_netrw = true,
       hijack_netrw = true,
-      open_on_setup = false,
-      ignore_ft_on_setup = {
-        "startify",
-        "dashboard",
-        "alpha",
-      },
       open_on_tab = false,
       hijack_cursor = false,
       update_cwd = true,
@@ -33,29 +27,17 @@ return {
       },
       git = {
         enable = true,
-        ignore = true,
+        ignore = false,
         timeout = 500,
       },
+      filters = {
+        git_ignored = false,
+      },
       view = {
-        width = 30,
-        height = 30,
-        hide_root_folder = false,
+        width = 50,
         side = "left",
-        auto_resize = true,
-        mappings = {
-          custom_only = false,
-          -- list = {
-          --   { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-          --   { key = "h", cb = tree_cb "close_node" },
-          --   { key = "v", cb = tree_cb "vsplit" },
-          -- },
-        },
         number = false,
         relativenumber = false,
-      },
-      actions = {
-        quit_on_open = true,
-        window_picker = { enable = true },
       },
       renderer = {
         highlight_git = true,
