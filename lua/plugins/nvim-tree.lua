@@ -7,7 +7,14 @@ return {
         ignore = false, -- Show files that are in .gitignore
       },
       filters = {
-        git_ignored = false, -- Explicitly disable filtering of gitignored files
+        git_ignored = false,
+      },
+      renderer = {
+        highlight_git = true,
+        highlight_diagnostics = true,
+      },
+      update_focused_file = {
+        enable = true,
       },
     },
   },
