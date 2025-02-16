@@ -112,3 +112,7 @@ mgmt
 discoverytool
 discoverymgmt
 Debugf
+rdkafka
+rdkafka
+traceparent
+tracestate
