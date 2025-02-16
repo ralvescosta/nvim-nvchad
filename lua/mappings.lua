@@ -40,9 +40,9 @@ map(
 
 map(
   "n",
-  "<Leader>cs",
+  "<Leader>ss",
   "<cmd>Telescope spell_suggest<CR>",
-  { noremap = true, silent = true, desc = "Code Spell suggest" }
+  { noremap = true, silent = true, desc = "Spelling suggestions" }
 )
 
 map("n", "<Leader>cd", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Code diagnostic" })
