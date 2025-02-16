@@ -18,7 +18,6 @@ return {
         markdown = { "cspell" },
       }
 
-      -- 🔥 Debugging: Show messages in `:messages`
       vim.api.nvim_create_autocmd("BufWritePost", {
         callback = function()
           vim.notify("Running CSpell Linter...", vim.log.levels.INFO, { timeout = 100 })
