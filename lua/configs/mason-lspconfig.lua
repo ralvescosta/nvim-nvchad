@@ -9,10 +9,7 @@ require("mason-lspconfig").setup {
       "golines",
       "terraform-ls",
       "lua-language-server",
-      "codelldb",
-      "cspell",
-      "codespell",
-      "misspell",
+      "codelldb"
     },
   },
 }
