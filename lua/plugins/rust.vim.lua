@@ -4,6 +4,6 @@ return {
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 0
-    end
-  }
+    end,
+  },
 }
