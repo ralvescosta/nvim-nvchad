@@ -34,7 +34,7 @@ return {
         git_ignored = false,
       },
       view = {
-        width = 50,
+        width = 35,
         side = "left",
         number = false,
         relativenumber = false,
