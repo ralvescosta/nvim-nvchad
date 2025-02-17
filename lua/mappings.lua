@@ -40,9 +40,9 @@ map(
 
 map(
   "n",
-  "<Leader>cs",
+  "<Leader>ss",
   "<cmd>Telescope spell_suggest<CR>",
-  { noremap = true, silent = true, desc = "Code Spell suggest" }
+  { noremap = true, silent = true, desc = "Spelling suggestions" }
 )
 
 map("n", "<Leader>cd", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Code diagnostic" })
@@ -115,7 +115,9 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window w
 
 -- ############# GIT
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Show previews git hunk" })
-map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" })
+map("n", "]g", ":Gitsigns next_hunk<CR>", { desc = "Go to next Git hunk" })
+map("n", "[g", ":Gitsigns prev_hunk<CR>", { desc = "Go to previous Git hunk" })
+
 map("n", "<leader>gg", function()
   local lazygit_cmd = "lazygit"
   local width = math.floor(vim.o.columns * 0.8)

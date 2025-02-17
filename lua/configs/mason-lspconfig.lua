@@ -10,9 +10,10 @@ require("mason-lspconfig").setup {
       "terraform-ls",
       "lua-language-server",
       "codelldb",
-      "cspell",
-      "codespell",
-      "misspell",
+      "buf",
+      "buf-language-server",
+      "helm_ls",
+      "dockerls",
     },
   },
 }

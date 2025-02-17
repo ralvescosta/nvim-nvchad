@@ -18,9 +18,15 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 ```bash
 sudo apt install xclip
 sudo apt install ripgrep
-sudo apt install lazygit
 go install github.com/jesseduffield/lazygit@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+go install github.com/jessfraz/dockfmt@latest
+go install golang.org/x/tools/cmd/goimports@latest
 asdf reshim golang
+npm install -g cspell
+npm install -g prettier
+asdf reshim nodejs
+cargo install taplo-cli
 ```
 
 ## Download and configuration of NerdFonts
