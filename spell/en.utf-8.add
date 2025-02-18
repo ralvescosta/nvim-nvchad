@@ -129,3 +129,8 @@ config
 multisqldb
 adempiere
 mastercard
+timestamp
+trxRepository
+trx
+redis
+elo
