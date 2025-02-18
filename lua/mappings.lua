@@ -118,7 +118,7 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Show previews git
 map("n", "]g", ":Gitsigns next_hunk<CR>", { desc = "Go to next Git hunk" })
 map("n", "[g", ":Gitsigns prev_hunk<CR>", { desc = "Go to previous Git hunk" })
 
-map("n", "<leader>gg", function()
+map("n", "<leader>lg", function()
   local lazygit_cmd = "lazygit"
   local width = math.floor(vim.o.columns * 0.8)
   local height = math.floor(vim.o.lines * 0.8)
@@ -145,3 +145,28 @@ end, { remap = true, desc = "Open Lazygit" })
 -- ############# Noice
 map("n", "<leader>N", ":Noice dismiss<CR>", { desc = "Dismiss all visible notifications" })
 --
+
+-- ############## DOCKER
+map("n", "<leader>ld", function()
+  local lazygit_cmd = "lazydocker"
+  local width = math.floor(vim.o.columns * 0.8)
+  local height = math.floor(vim.o.lines * 0.8)
+  local row = math.floor((vim.o.lines - height) / 2)
+  local col = math.floor((vim.o.columns - width) / 2)
+
+  local buf = vim.api.nvim_create_buf(false, true)
+  local _ = vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = width,
+    height = height,
+    row = row,
+    col = col,
+    style = "minimal",
+    border = "rounded",
+  })
+
+  vim.fn.termopen(lazygit_cmd)
+  vim.api.nvim_command "startinsert"
+  vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>bd!<CR>", { noremap = true, silent = true })
+end, { remap = true, desc = "Open Lazydocker" })
+-- ###################################

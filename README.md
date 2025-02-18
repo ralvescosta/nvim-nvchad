@@ -22,6 +22,7 @@ go install github.com/jesseduffield/lazygit@latest
 go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 go install github.com/jessfraz/dockfmt@latest
 go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/jesseduffield/lazydocker@latest
 asdf reshim golang
 npm install -g cspell
 npm install -g prettier
