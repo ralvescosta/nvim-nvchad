@@ -145,3 +145,9 @@ sasl
 CNPJ
 clientKey
 
+protos
+viewmodels
+actix_web
+utoipa
+deadpool_postgres
+chrono
