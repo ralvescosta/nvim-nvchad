@@ -18,8 +18,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- ##### FOLD #####
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- Optional: Start with all folds open or closed
 vim.opt.foldenable = false
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*",
+    callback = function()
+        vim.defer_fn(function()
+            vim.cmd("normal! zR")
+        end, 50)
+    end
+})
 -- #####################
 
 -- ##### BRAKING POINT ######

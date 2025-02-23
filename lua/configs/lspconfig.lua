@@ -13,6 +13,7 @@ local servers = {
   "buf_ls",
   "html",
   "cssls",
+  "ts_ls",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"

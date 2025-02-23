@@ -156,3 +156,13 @@ hedrosistemas
 tlsv1
 Toolchain
 rustup
+allowedby
+foldmethod
+foldexpr
+foldenable
+nvim_create_autocmd
+texthl
+linehl
+numhl
+Nvdash
+spelllang
