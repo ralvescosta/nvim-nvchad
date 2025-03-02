@@ -116,8 +116,8 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window w
 
 -- ############# GIT
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Show previews git hunk" })
-map("n", "]g", ":Gitsigns next_hunk<CR>", { desc = "Go to next Git hunk" })
-map("n", "[g", ":Gitsigns prev_hunk<CR>", { desc = "Go to previous Git hunk" })
+map("n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Go to next Git hunk" })
+map("n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Go to previous Git hunk" })
 
 map("n", "<leader>lg", function()
   local lazygit_cmd = "lazygit"
