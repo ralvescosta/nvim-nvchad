@@ -1,10 +1,10 @@
 return {
   {
     "folke/todo-comments.nvim",
-    event = "BufRead",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "BufReadPost",
     config = function()
-      require("todo-comments").setup()
-    end
-  }
-
+      require("todo-comments").setup {}
+    end,
+  },
 }
