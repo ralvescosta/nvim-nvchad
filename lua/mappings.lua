@@ -107,6 +107,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- ###########################
 
 -- ######### WINDOW RE SIZE ###########
+-- TODO
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
@@ -170,3 +171,5 @@ map("n", "<leader>ld", function()
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>bd!<CR>", { noremap = true, silent = true })
 end, { remap = true, desc = "Open Lazydocker" })
 -- ###################################
+
+map("n", "<C-d>", ":MCstart<CR>", { desc = "Start multi cursors" })
