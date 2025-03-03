@@ -110,8 +110,8 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- TODO
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
+map("n", "<C-Left>", "<cmd>:NvimTreeResize -2<CR>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>:NvimTreeResize +2<CR>", { desc = "Increase window width" })
 -- ###################################
 
 -- ############# GIT
