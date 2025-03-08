@@ -1,19 +1,27 @@
-# My personal NvChad configurations
+# My Personal NvChad Configurations
 
-## Install nvim
+This repository contains my personal configurations for Neovim using the NvChad framework. These settings are tailored to enhance productivity and streamline the development workflow.
+
+## Install Neovim
+
+Follow these steps to install Neovim on your system:
 
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
-```
-Now you need to add this path in your shell profile
+## Usage
+
+After cloning the repository and installing the necessary tools, open Neovim by running `nvim`. Your custom configurations will be loaded automatically.
+After installation, add Neovim to your system's PATH by including the following line in your shell profile (e.g., `~/.bashrc`, `~/.zshrc`):
 
 ```bash
 export PATH="$PATH:/opt/nvim-linux64/bin"
 ```
 
-## Install tools
+## Install Required Tools
+
+To ensure full functionality of the configurations, install the following tools:
 
 ```bash
 sudo apt install xclip
@@ -30,9 +38,13 @@ asdf reshim nodejs
 cargo install taplo-cli
 ```
 
-## Download and configuration of NerdFonts
+## Download and Configure NerdFonts
 
-Go to the NedFont download page `https://www.nerdfonts.com/font-downloads`, select you desired font, download the zip folder.
+NerdFonts provides a collection of patched fonts that include icons. Follow these steps to download and configure them:
+
+1. Visit the NerdFont download page: [NerdFonts Download](https://www.nerdfonts.com/font-downloads).
+2. Select your desired font and download the zip file.
+3. Extract the contents of the zip file into the following directory:
 
 Extract the zipper folder in this directory
 
@@ -43,8 +55,12 @@ Extract the zipper folder in this directory
 And configure in your terminal the font you will use
 
 
-## Clone this repository
+## Clone This Repository
+
+To clone this repository and set up your Neovim configuration, run the following command:
 
 ```bash
-git clone git@github.com:ralvescosta/nvim-nvchad.git ~/.config/nvim && nvim
+```bash
+git clone git@github.com:ralvescosta/nvim-nvchad.git ~/.config/nvim
+nvim
 ```
