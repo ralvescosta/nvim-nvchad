@@ -49,9 +49,10 @@ map("n", "<Leader>cd", vim.diagnostic.open_float, { noremap = true, silent = tru
 --- ############
 
 -- ####### Telescope #######
-map("n", "<Leader>tcd", function()
+map("n", "<Leader>fd", function()
   require("telescope.builtin").diagnostics { bufnr = 0 }
 end, { noremap = true, silent = true, desc = "Telescope code diagnostic" })
+map("n", "<Leader>fad", ":Telescope diagnostics<CR>", { noremap = true, silent = true, desc = "Telescope all files diagnostics" })
 -- #####################
 
 -- ####### DAP #######
