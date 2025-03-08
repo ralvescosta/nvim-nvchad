@@ -174,3 +174,4 @@ end, { remap = true, desc = "Open Lazydocker" })
 -- ###################################
 
 map("n", "<C-d>", ":MCstart<CR>", { desc = "Start multi cursors" })
+map("n", "-", ":Oil --float<CR>", { desc = "Open parent directory" })
