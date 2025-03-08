@@ -2,6 +2,7 @@ require "nvchad.options"
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+vim.opt.laststatus = 3
 
 -- ###### Dashboard ######
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -20,12 +21,12 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.api.nvim_create_autocmd("BufReadPost", {
-    pattern = "*",
-    callback = function()
-        vim.defer_fn(function()
-            vim.cmd("normal! zR")
-        end, 50)
-    end
+  pattern = "*",
+  callback = function()
+    vim.defer_fn(function()
+      vim.cmd "normal! zR"
+    end, 50)
+  end,
 })
 -- #####################
 
