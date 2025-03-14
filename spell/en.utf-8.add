@@ -194,3 +194,10 @@ devicons
 MunifTanjim
 avante
 yetone
+fanout
+GatewayCiotStatus
+GatewayUartStatus
+ciot_status
+uart_status
+uart
+ciot
