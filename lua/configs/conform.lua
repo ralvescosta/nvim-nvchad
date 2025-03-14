@@ -9,7 +9,6 @@ local options = {
     graphql = { "prettier" },
     terraform = { "terraform_fmt" },
     hcl = { "terraform_fmt" },
-    -- yaml = { "yamlfmt" },
     dockerfile = { "dockerfmt" },
     json = { "prettier" },
     javascript = { "prettier" },

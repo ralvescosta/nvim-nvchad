@@ -20,7 +20,6 @@ return {
 
       vim.api.nvim_create_autocmd("BufWritePost", {
         callback = function()
-          vim.notify("Running CSpell Linter...", vim.log.levels.INFO, { timeout = 100 })
           require("lint").try_lint()
         end,
       })

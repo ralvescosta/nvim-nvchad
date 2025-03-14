@@ -201,3 +201,8 @@ ciot_status
 uart_status
 uart
 ciot
+gomod
+gofmt
+clippy
+taplo
+dockerfmt
