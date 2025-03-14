@@ -108,11 +108,14 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- ###########################
 
 -- ######### WINDOW RE SIZE ###########
--- TODO
+-- NvimTree
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>:NvimTreeResize -2<CR>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>:NvimTreeResize +2<CR>", { desc = "Increase window width" })
+-- Panels
+map("n", "<Leader><Right>", "<cmd>vertical resize -2<CR>", { desc = "Decrease panel width" })
+map("n", "<Leader><Left>", "<cmd>vertical resize +2<CR>", { desc = "Increase panel width" })
 -- ###################################
 
 -- ############# GIT
