@@ -206,3 +206,4 @@ gofmt
 clippy
 taplo
 dockerfmt
+struct
