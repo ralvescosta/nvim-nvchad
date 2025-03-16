@@ -1,20 +1,9 @@
 require "nvchad.options"
 
+vim.g.db_ui_execute_on_save = 0
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 vim.opt.laststatus = 3
-
--- ###### Dashboard ######
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    -- If no files were passed as arguments (argv == 0),
-    -- open Nvdash automatically.
-    if #vim.fn.argv() == 0 then
-      vim.cmd "Nvdash"
-    end
-  end,
-})
--- #####################
 
 -- ##### FOLD #####
 vim.opt.foldmethod = "expr"
@@ -48,3 +37,12 @@ vim.fn.sign_define("DapStopped", {
   numhl = "",
 })
 -- ##########################
+
+-- #### RESETTING SQL KEY BIDING
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = "sql",
+  callback = function()
+    vim.keymap.del("i", "<left>", { buffer = true })
+    vim.keymap.del("i", "<right>", { buffer = true })
+  end,
+})

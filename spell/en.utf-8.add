@@ -207,3 +207,6 @@ clippy
 taplo
 dockerfmt
 struct
+vimdoc
+gosum
+gowork
