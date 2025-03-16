@@ -8,5 +8,5 @@ return {
     config = function(_, opts)
       require("dapui").setup(opts)
     end,
-  }
+  },
 }

@@ -2,7 +2,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      local dap, dapui = require("dap"), require("dapui")
+      local dap, dapui = require "dap", require "dapui"
 
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
@@ -19,6 +19,6 @@ return {
       -- dap.listeners.before.event_exited.dapui_config = function()
       --   dapui.close()
       -- end
-    end
-  }
+    end,
+  },
 }
